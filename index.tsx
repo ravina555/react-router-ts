@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import Navigation from './Router/BasicExample';
+import ComponentNavigation from './Router/ComponentNavigation';
 import './style.css';
 
 interface AppProps {}
@@ -20,6 +21,7 @@ class App extends Component<AppProps, AppState> {
     return (
       <div>
         <Navigation />
+        <ComponentNavigation />
       </div>
     );
   }
