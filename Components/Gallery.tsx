@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 const GalleryPage = () => {
   let navigate = useNavigate();
-  const [moreImgs, setMore] = useState(false);
   const [toggleItems, setItemsState] = useState({
     showItems: false,
     msg: 'Click to see More',
@@ -14,8 +13,11 @@ const GalleryPage = () => {
   };
 
   const handleMoreImgs = () => {
-    navigate('/Gallery?print=20');
-    setMore(true);
+    //this piece of code is usable when we use useLocation hook
+    // navigate('/Gallery?print=20');
+
+    //for useParam hook
+    navigate('/Gallery/20');
     setItemsState({
       showItems: !toggleItems.showItems,
       msg: !toggleItems.showItems ? 'Click to see less' : 'Click to see More',
@@ -34,7 +36,9 @@ const GalleryPage = () => {
       <br />
       <div>
         <button onClick={() => handleMoreImgs()}>{toggleItems.msg}</button>
-        {toggleItems.showItems && <MoreImages showItems={true} />}
+        {toggleItems.showItems && (
+          <MoreImages showItems={toggleItems.showItems} />
+        )}
       </div>
       <br />
       <div>
