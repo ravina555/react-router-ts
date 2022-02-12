@@ -1,14 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate, useMatch } from 'react-router-dom';
 const AboutPage = () => {
   const navigate = useNavigate();
+  const match = useMatch('/About/:name');
   const goToHomePage = () => {
     navigate('/Home');
   };
   return (
     <div>
       <h1>Hello, I'm About component</h1>
+      <h3>Welcome {match ? match.params.name : 'Stranger'}</h3>
       <p>
         Bacon ipsum dolor amet chuck meatloaf doner shankle picanha. Ham hock
         pork belly capicola buffalo ground round tail. Turkey biltong spare

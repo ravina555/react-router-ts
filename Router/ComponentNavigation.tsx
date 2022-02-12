@@ -33,6 +33,7 @@ const ComponentNavigation = () => {
           {/* using params */}
           <Route path="/Gallery/:print" element={<GalleryPage />} />
           <Route path="/About" element={<AboutPage />} />
+          <Route path="/About/:name" element={<AboutPage />} />
         </Routes>
       </Router>
     </React.Fragment>
